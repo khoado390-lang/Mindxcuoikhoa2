@@ -1,0 +1,44 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 250px; 
+    background: #FFF;
+}
+
+/* LOGO */
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    left: 40px;
+}
+
+.logo-img {
+    width: 45px;
+}
+
+/* TEXT LOGO */
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    font-style: italic;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 18px;
+    color: #333;
+    gap: 15px;
+}
+
+/* PHONE */
+
+.phone {
+    font-size: 20px;
+    color: #3b5cc9;
+}
+
+.phone span {
+    color: #888;
+}

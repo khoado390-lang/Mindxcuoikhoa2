@@ -1,0 +1,167 @@
+.search-section {
+    width: 80%;
+    margin: auto;
+}
+
+/* SEARCH BAR */
+.search-bar {
+    position: relative;
+    width: 100%;
+    background: #dbd6d1;
+    padding: 18px 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* INPUT */
+.search-bar input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 18px;
+}
+
+/* ICON */
+.search-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    z-index: 1; 
+}
+.search-icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #3f56b5;
+
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
+
+/* HOVER → TRƯỢT VÀO */
+.search-icon:hover::before {
+    transform: translateX(0);
+}
+/* THANH ĐỎ BÊN PHẢI */
+.search-bar::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: #3f56b5;
+}
+.search-icon svg,
+.search-icon span {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-filter {
+    background: #3f56b5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-filter:hover {
+    background: #3f56b5;
+}
+
+/* ===== FILTER BOX ===== */
+/* FILTER ROW */
+.search-filter {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+    box-sizing: border-box; 
+}
+
+/* SELECT */
+.search-filter select {
+    flex: 1;
+    padding: 15px;
+    background: #d1d5db;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* BUTTON SEARCH */
+.btn-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #3f56b5;
+    color: white;
+    border: none;
+    padding: 16px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* HOVER SEARCH */
+.btn-search:hover {
+    background: #3b3058;
+}
+
+/* BUTTON RESET */
+.btn-reset {
+    border: 2px solid #3f56b5;
+    background: transparent;
+    padding: 16px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #3f56b5;
+    transition: 0.3s;
+}
+
+/* HOVER RESET */
+.btn-reset:hover {
+    background: #3b3058;
+    color: white;
+}
+
+/* ===== BANNER ===== */
+.contact-banner {
+    width: 100%;
+    margin-top: 30px;
+    background: #3f56b5;
+    color: white;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 22px;
+    box-sizing: border-box;
+}
+
+/* PHONE */
+.contact-banner .phone {
+    font-weight: bold;
+    font-size: 24px;
+}

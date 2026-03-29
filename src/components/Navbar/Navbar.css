@@ -1,0 +1,39 @@
+.navbar {
+width:100vw;
+background:#3f56b5;
+padding:15px 0;
+}
+
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+}
+
+.menu li {
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.menu li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 18px;
+    background: white;
+    opacity: 0.5;
+}
+.menu li:hover {
+    color: #ffd700;
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}
