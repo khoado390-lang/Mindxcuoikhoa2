@@ -14,10 +14,25 @@ function AuthModal({ isOpen, onClose, mode, onLoginSuccess }) {
   const [errors, setErrors] = useState({});
 
   // 👉 sync mode
-  useEffect(() => {
-    if (mode === "login") setIsLogin(true);
-    if (mode === "register") setIsLogin(false);
-  }, [mode]);
+useEffect(() => {
+  if (!isOpen) return;
+
+  if (mode === "login") {
+    setIsLogin(true);
+  } else {
+    setIsLogin(false);
+  }
+
+  // 🔥 reset form + lỗi mỗi lần mở
+  setForm({
+    name: "",
+    phone: "",
+    password: "",
+    confirm: "",
+  });
+
+  setErrors({});
+}, [mode, isOpen]);
 
   if (!isOpen) return null;
 
