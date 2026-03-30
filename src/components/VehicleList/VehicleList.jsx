@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { vehicles } from "../../carsData";
 import "./VehicleList.css";
 
-function VehicleList() {
+function VehicleList({ vehicles }) {
   const [activeTab, setActiveTab] = useState("ALL");
   const [selectedBrand, setSelectedBrand] = useState("");
   const [showBrand, setShowBrand] = useState(false);
@@ -38,7 +37,7 @@ function VehicleList() {
   const currentCars = filteredCars.slice(
     startIndex,
     startIndex + itemsPerPage
-  );
+  );                   
 
   // ===== CLICK TAB =====
   const handleTabClick = (type) => {
@@ -113,10 +112,21 @@ function VehicleList() {
         className="car-list slide-in-right"
       >
         {currentCars.map((car) => (
-          <div className="car-item" key={car.id}>
-            <img src={car.image} alt={car.name} />
-            <h3>{car.name}</h3>
-          </div>
+<div className="car-item" key={car.id}>
+  <img src={car.image} alt={car.name} />
+
+  <div className="car-info">
+    <h3>{car.name}</h3>
+
+    <p className="car-price">
+      {car.price.toLocaleString()} đ
+    </p>
+
+    <button className="car-btn">
+      🚗 XEM CHI TIẾT
+    </button>
+  </div>
+</div>
         ))}
       </div>
 
@@ -135,6 +145,6 @@ function VehicleList() {
 
     </div>
   );
-}
+} 
 
 export default VehicleList;

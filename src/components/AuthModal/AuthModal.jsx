@@ -14,35 +14,28 @@ function AuthModal({ isOpen, onClose, mode, onLoginSuccess }) {
   const [errors, setErrors] = useState({});
 
   // 👉 sync mode
-useEffect(() => {
-  if (!isOpen) return;
+  useEffect(() => {
+    if (!isOpen) return;
 
-  if (mode === "login") {
-    setIsLogin(true);
-  } else {
-    setIsLogin(false);
-  }
+    setIsLogin(mode === "login");
 
-  // 🔥 reset form + lỗi mỗi lần mở
-  setForm({
-    name: "",
-    phone: "",
-    password: "",
-    confirm: "",
-  });
+    setForm({
+      name: "",
+      phone: "",
+      password: "",
+      confirm: "",
+    });
 
-  setErrors({});
-}, [mode, isOpen]);
+    setErrors({});
+  }, [mode, isOpen]);
 
   if (!isOpen) return null;
 
-  // 👉 INPUT
+  // 👉 INPUT CHANGE
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     setForm({ ...form, [name]: value });
 
-    // 🔥 clear lỗi khi gõ
     setErrors({ ...errors, [name]: "" });
   };
 
@@ -59,11 +52,7 @@ useEffect(() => {
       if (!form.password) err.password = "Vui lòng nhập mật khẩu";
       if (!form.confirm) err.confirm = "Vui lòng nhập lại mật khẩu";
 
-      if (
-        form.password &&
-        form.confirm &&
-        form.password !== form.confirm
-      ) {
+      if (form.password !== form.confirm) {
         err.confirm = "Mật khẩu không khớp";
       }
     }
@@ -85,14 +74,12 @@ useEffect(() => {
         user.password === form.password
       ) {
         localStorage.setItem("isLogin", "true");
-
         onLoginSuccess(user);
         onClose();
       } else {
         alert("Sai tài khoản hoặc mật khẩu");
       }
     } else {
-      // REGISTER
       localStorage.setItem(
         "user",
         JSON.stringify({
@@ -102,76 +89,84 @@ useEffect(() => {
         })
       );
 
-      alert("Đăng ký thành công! Mời đăng nhập lại");
+      alert("Đăng ký thành công!");
 
-      setIsLogin(true); // 👉 quay về login
+      setIsLogin(true);
       setForm({
         name: "",
         phone: "",
         password: "",
         confirm: "",
       });
-      setErrors({});
     }
   };
 
   return (
     <div className="auth-overlay" onClick={onClose}>
       <div className="auth-modal" onClick={(e) => e.stopPropagation()}>
-        <span className="close-btn" onClick={onClose}>✕</span>
+        <span className="close-btn" onClick={onClose}>
+          ✕
+        </span>
 
-        <h2>{isLogin ? "Đăng nhập tài khoản" : "Đăng ký tài khoản"}</h2>
+        <h2>{isLogin ? "Đăng nhập" : "Đăng ký tài khoản"}</h2>
 
         <div className="auth-form">
-
           {/* NAME */}
           {!isLogin && (
-            <>
+            <div className="input-group">
               <input
                 name="name"
-                placeholder="Họ tên"
                 value={form.name}
                 onChange={handleChange}
+                placeholder=" "
                 className={errors.name ? "input-error" : ""}
               />
+              <label>Họ tên</label>
               {errors.name && <p className="error">{errors.name}</p>}
-            </>
+            </div>
           )}
 
           {/* PHONE */}
-          <input
-            name="phone"
-            placeholder="Số điện thoại"
-            value={form.phone}
-            onChange={handleChange}
-            className={errors.phone ? "input-error" : ""}
-          />
-          {errors.phone && <p className="error">{errors.phone}</p>}
+          <div className="input-group">
+            <input
+              name="phone"
+              value={form.phone}
+              onChange={handleChange}
+              placeholder=" "
+              className={errors.phone ? "input-error" : ""}
+            />
+            <label>Số điện thoại</label>
+            {errors.phone && <p className="error">{errors.phone}</p>}
+          </div>
 
           {/* PASSWORD */}
-          <input
-            type="password"
-            name="password"
-            placeholder="Mật khẩu"
-            value={form.password}
-            onChange={handleChange}
-            className={errors.password ? "input-error" : ""}
-          />
-          {errors.password && <p className="error">{errors.password}</p>}
+          <div className="input-group">
+            <input
+              type="password"
+              name="password"
+              value={form.password}
+              onChange={handleChange}
+              placeholder=" "
+              className={errors.password ? "input-error" : ""}
+            />
+            <label>Mật khẩu</label>
+            {errors.password && <p className="error">{errors.password}</p>}
+          </div>
 
           {/* CONFIRM */}
           {!isLogin && (
-            <>
+            <div className="input-group">
               <input
                 type="password"
                 name="confirm"
-                placeholder="Nhập lại mật khẩu"
                 value={form.confirm}
                 onChange={handleChange}
+                placeholder=" "
                 className={errors.confirm ? "input-error" : ""}
               />
+              <label>Nhập lại mật khẩu</label>
               {errors.confirm && <p className="error">{errors.confirm}</p>}
-            </>
+            </div>
           )}
 
           <button className="btn-submit" onClick={handleSubmit}>
@@ -191,7 +186,6 @@ useEffect(() => {
               </>
             )}
           </div>
-
         </div>
       </div>
     </div>

@@ -190,7 +190,68 @@
 .slide-down {
     animation: slideDown 0.4s ease;
 }
+.car-item {
+  width: 320px;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  text-align: center;
+  margin: 20px;
 
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.car-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* IMAGE */
+.car-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.car-info {
+  padding: 18px;
+}
+
+/* NAME */
+.car-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+/* PRICE */
+.car-price {
+  color: #cfa43b; /* vàng luxury */
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* BUTTON */
+.car-btn {
+  width: 85%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #1c1c1c, #3a3a3a);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.car-btn:hover {
+  background: linear-gradient(135deg, #000, #2a2a2a);
+}
 @keyframes slideDown {
     from {
         opacity: 0;
