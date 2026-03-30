@@ -1,0 +1,135 @@
+/* OVERLAY */
+.auth-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* MODAL */
+.auth-modal {
+  width: 420px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px 28px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s ease;
+}
+
+/* CLOSE */
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #999;
+}
+
+.close-btn:hover {
+  color: #3f56b5;
+}
+
+/* TITLE */
+.auth-modal h2 {
+  text-align: center;
+  color: #3f56b5;
+  margin-bottom: 5px;
+}
+
+.sub-text {
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* FORM */
+.auth-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: 0.3s;
+}
+
+.auth-form input:focus {
+  border-color: #3f56b5;
+  box-shadow: 0 0 0 2px rgba(63, 86, 181, 0.2);
+}
+
+/* BUTTON */
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #3f56b5, #5c73e6);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: 0.3s;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(63, 86, 181, 0.4);
+}
+
+/* SWITCH TEXT */
+.switch {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.switch span {
+  color: #3f56b5;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.switch span:hover {
+  text-decoration: underline;
+}
+
+/* CHECKBOX */
+.auth-form label {
+  font-size: 13px;
+  color: #555;
+}
+
+.auth-form input[type="checkbox"] {
+  width: auto;
+  margin-right: 5px;
+}
+.error {
+  color: red;
+  font-size: 13px;
+  margin: 4px 0 10px;
+}
+.input-error {
+  border: 1px solid red;
+}
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

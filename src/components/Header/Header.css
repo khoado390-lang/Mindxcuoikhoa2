@@ -42,3 +42,139 @@
 .phone span {
     color: #888;
 }
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background: white;
+}
+
+/* LOGO */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 50px;
+}
+
+.logo-text span {
+    display: block;
+    font-weight: bold;
+}
+
+/* RIGHT */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* ACCOUNT */
+.account {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.account-icon {
+    font-size: 22px;
+    color: #3f56b5;
+}
+
+.account-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-text {
+    font-size: 12px;
+    color: gray;
+}
+
+.account-name {
+    font-weight: bold;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    overflow: hidden;
+    width: 160px;
+}
+
+.dropdown-item {
+    padding: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dropdown-item:hover {
+    background: #3f56b5;
+    color: white;
+}
+
+/* CART */
+.cart {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 22px;
+    color: #3f56b5;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+/* DROPDOWN BOX */
+.dropdown {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 200px; /* 🔥 thêm dòng này */
+
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  overflow: hidden;
+  z-index: 999;
+}
+
+/* ITEM */
+.dropdown-item {
+  padding: 12px 16px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  white-space: nowrap; /* 🔥 QUAN TRỌNG (fix lỗi xuống dòng) */
+}
+
+.dropdown-item:hover {
+  background: #3f56b5;
+  color: white;
+}
