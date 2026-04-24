@@ -1,21 +1,25 @@
 import { useState } from "react";
 import "./VehicleList.css";
+import { useNavigate } from "react-router-dom";
 
-function VehicleList({ vehicles }) {
+function VehicleList({ vehicles, hideMenu = false }) {
   const [activeTab, setActiveTab] = useState("ALL");
   const [selectedBrand, setSelectedBrand] = useState("");
   const [showBrand, setShowBrand] = useState(false);
   const [animationKey, setAnimationKey] = useState(0);
 
-  // 🔥 THÊM PHÂN TRANG
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
 
-  // ===== DANH SÁCH BRAND =====
+  const navigate = useNavigate();
+
+  // ===== BRAND =====
   const brands = [
     ...new Set(
       vehicles
-        .filter((car) => car.type === activeTab)
+        .filter((car) =>
+          activeTab === "ALL" ? true : car.type === activeTab
+        )
         .map((car) => car.brand)
     ),
   ];
@@ -30,104 +34,116 @@ function VehicleList({ vehicles }) {
     );
   });
 
-  // ===== PHÂN TRANG =====
+  // ===== PAGINATION =====
   const totalPages = Math.ceil(filteredCars.length / itemsPerPage);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentCars = filteredCars.slice(
     startIndex,
     startIndex + itemsPerPage
-  );                   
+  );
 
   // ===== CLICK TAB =====
   const handleTabClick = (type) => {
     setActiveTab(type);
     setSelectedBrand("");
     setShowBrand(true);
-    setCurrentPage(1); // 🔥 reset trang
+    setCurrentPage(1);
     setAnimationKey((prev) => prev + 1);
   };
 
   return (
     <div className="vehicle-section">
 
-      {/* MENU */}
-      <div className="menu-wrapper">
-        {!showBrand && (
-          <div className="tabs fade-in">
-            <button onClick={() => {
-              setActiveTab("ALL");
-              setCurrentPage(1);
-            }}>
-              TOÀN BỘ XE
-            </button>
+      {/* ===== MENU (ẨN NẾU CẦN) ===== */}
+      {!hideMenu && (
+        <div className="menu-wrapper">
 
-            <button onClick={() => handleTabClick("Xe đã qua sử dụng")}>
-              XE ĐÃ QUA SỬ DỤNG
-            </button>
+          {!showBrand && (
+            <div className="tabs fade-in">
 
-            <button onClick={() => handleTabClick("Xe mới")}>
-              XE MỚI
-            </button>
-
-            <button>TÌM XE NHANH</button>
-          </div>
-        )}
-
-        {showBrand && (
-          <div className="brand-menu slide-down">
-            {brands.map((brand) => (
               <button
-                key={brand}
-                className={selectedBrand === brand ? "active" : ""}
                 onClick={() => {
-                  setSelectedBrand(brand);
-                  setCurrentPage(1); // 🔥 reset trang
+                  setActiveTab("ALL");
+                  setCurrentPage(1);
+                }}
+              >
+                TOÀN BỘ XE
+              </button>
+
+              <button onClick={() => handleTabClick("Xe đã qua sử dụng")}>
+                XE ĐÃ QUA SỬ DỤNG
+              </button>
+
+              <button onClick={() => handleTabClick("Xe mới")}>
+                XE MỚI
+              </button>
+
+              <button>TÌM XE NHANH</button>
+
+            </div>
+          )}
+
+          {showBrand && (
+            <div className="brand-menu slide-down">
+
+              {brands.map((brand) => (
+                <button
+                  key={brand}
+                  className={selectedBrand === brand ? "active" : ""}
+                  onClick={() => {
+                    setSelectedBrand(brand);
+                    setCurrentPage(1);
+                    setAnimationKey((prev) => prev + 1);
+                  }}
+                >
+                  {brand}
+                </button>
+              ))}
+
+              <button
+                className="back-btn"
+                onClick={() => {
+                  setShowBrand(false);
+                  setActiveTab("ALL");
+                  setSelectedBrand("");
+                  setCurrentPage(1);
                   setAnimationKey((prev) => prev + 1);
                 }}
               >
-                {brand}
+                ← Quay lại
               </button>
-            ))}
 
-            <button
-              className="back-btn"
-              onClick={() => {
-                setShowBrand(false);
-                setActiveTab("ALL");
-                setSelectedBrand("");
-                setCurrentPage(1);
-                setAnimationKey((prev) => prev + 1);
-              }}
-            >
-              ← Quay lại
-            </button>
-          </div>
-        )}
-      </div>
+            </div>
+          )}
 
-      {/* LIST */}
-      <div
-        key={animationKey}
-        className="car-list slide-in-right"
-      >
+        </div>
+      )}
+
+      {/* ===== LIST ===== */}
+      <div key={animationKey} className="car-list slide-in-right">
+
         {currentCars.map((car) => (
-<div className="car-item" key={car.id}>
-  <img src={car.image} alt={car.name} />
+          <div className="car-item" key={car.id}>
+            <img src={car.image} alt={car.name} />
 
-  <div className="car-info">
-    <h3>{car.name}</h3>
+            <div className="car-info">
+              <h3>{car.name}</h3>
 
-    <p className="car-price">
-      {car.price.toLocaleString()} đ
-    </p>
+              <p className="car-price">
+                {car.price.toLocaleString()} đ
+              </p>
 
-    <button className="car-btn">
-      🚗 XEM CHI TIẾT
-    </button>
-  </div>
-</div>
+              <button
+                className="car-btn"
+                onClick={() => navigate(`/car/${car.id}`)}
+              >
+                🚗 Xem Chi Tiết
+              </button>
+            </div>
+          </div>
         ))}
+
       </div>
 
       {/* ===== PAGINATION ===== */}
@@ -145,6 +161,6 @@ function VehicleList({ vehicles }) {
 
     </div>
   );
-} 
+}
 
 export default VehicleList;

@@ -1,7 +1,6 @@
 import "./Banner.css";
 import { useState, useEffect } from "react";
 
-import bannerBg from "../../assets/anh1.png";
 import banner1 from "../../assets/banner1.jpg";
 import banner2 from "../../assets/banner2.jpg";
 import banner3 from "../../assets/banner3.jpg";
@@ -14,14 +13,14 @@ function Banner() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // ✅ AUTO SLIDE (FIX CHUẨN)
+  // AUTO SLIDE
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 4000);
+    }, 5000); // 🔥 5s cho mượt
 
     return () => clearInterval(interval);
-  }, []); // 🔥 chỉ chạy 1 lần
+  }, []);
 
   // NEXT
   const nextSlide = () => {
@@ -36,15 +35,10 @@ function Banner() {
   };
 
   return (
-    <div
-      className="banner"
-      style={{ backgroundImage: `url(${bannerBg})` }}
-    >
+    <div className="banner">
+
       {/* TEXT */}
-      <div className="hero-text">
-        <h1>AUTO CAR</h1>
-        <p>Lựa chọn thông minh cho mọi khách hàng</p>
-      </div>
+
 
       {/* SLIDER */}
       <div className="hero-banner">
@@ -55,16 +49,21 @@ function Banner() {
           }}
         >
           {images.map((img, index) => (
-            <img src={img} key={index} alt="car" />
+            <img
+              src={img}
+              key={index}
+              alt="car"
+              className={index === currentIndex ? "active" : ""}
+            />
           ))}
         </div>
 
-        {/* BUTTON PREV */}
+        {/* PREV */}
         <button className="prev" onClick={prevSlide}>
           ❮
         </button>
 
-        {/* BUTTON NEXT */}
+        {/* NEXT */}
         <button className="next" onClick={nextSlide}>
           ❯
         </button>
@@ -80,6 +79,7 @@ function Banner() {
           ))}
         </div>
       </div>
+
     </div>
   );
 }

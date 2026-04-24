@@ -1,0 +1,271 @@
+/* ===== PAGE ===== */
+.service-page {
+  width: 90%;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== TOP ===== */
+.service-top {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.service-left {
+  flex: 2;
+}
+
+.service-left h1 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.service-left span {
+  color: #b30000;
+}
+
+.service-left p {
+  margin: 30px 0;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.service-left h3 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* BRAND */
+.brand-list {
+  display: flex;
+  gap: 200px;
+  margin: 20px 0;
+}
+
+.brand-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.brand-list li {
+  font-size: 18px;
+  margin: 15px 0;
+}
+
+/* RIGHT */
+.service-right {
+  flex: 1;
+}
+
+.service-right img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+/* ===== COMMIT ===== */
+.commit {
+  margin: 50px 0;
+}
+
+.commit h3 {
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+/* ===== BOOKING ===== */
+.booking {
+  display: flex;
+  gap: 40px;
+}
+
+.booking-form {
+  flex: 2;
+}
+
+.booking-form h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+/* GRID */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.form-grid input {
+  padding: 14px;
+  border: none;
+  background: #f2f2f2;
+  outline: none;
+}
+
+/* BUTTON */
+.btn-book {
+  margin-top: 25px;
+  padding: 14px 35px;
+  background: #8b0015;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-book:hover {
+  background: #a8001c;
+}
+
+/* ===== TIME BOX ===== */
+.time-box {
+  flex: 1;
+  border: 1px solid #ddd;
+  padding: 20px;
+  background: #fafafa;
+}
+
+.time-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.closed {
+  color: red;
+}
+
+/* ===== HOTLINE ===== */
+.hotline {
+  margin-top: 50px;
+  background: #8b0015;
+  color: white;
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+.phone {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/* ===== TIME INPUT ===== */
+.time-input {
+  position: relative;
+}
+
+.input-time {
+  width: 500px;
+  padding: 14px;
+  background: #f2f2f2;
+  border: none;
+}
+
+.clock {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  color: #8b0015;
+}
+
+/* ERROR */
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.react-datepicker {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== HEADER ===== */
+.react-datepicker__header {
+  background: #f5f5f5;
+  border-bottom: none;
+}
+
+/* ===== TITLE ===== */
+.react-datepicker__current-month {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* ===== DAY NAME ===== */
+.react-datepicker__day-name {
+  color: #999;
+  font-weight: 600;
+}
+
+/* ===== DAY ===== */
+.react-datepicker__day {
+  width: 35px;
+  line-height: 35px;
+  margin: 2px;
+  border-radius: 4px;
+}
+
+/* HOVER */
+.react-datepicker__day:hover {
+  background: #ddd;
+}
+
+/* SELECTED DAY */
+.react-datepicker__day--selected {
+  background: #2b7bbb !important;
+  color: white;
+}
+
+/* ===== TIME ===== */
+.react-datepicker__time-container {
+  width: 100px;
+  border-left: 1px solid #ddd;
+}
+
+/* HEADER TIME */
+.react-datepicker-time__header {
+  background: #eee;
+  font-weight: bold;
+}
+
+/* TIME ITEM */
+.react-datepicker__time-list-item {
+  padding: 8px;
+}
+
+/* HOVER TIME */
+.react-datepicker__time-list-item:hover {
+  background: #ddd;
+}
+
+/* SELECTED TIME (ĐỎ NHƯ HÌNH) */
+.react-datepicker__time-list-item--selected {
+  background: #8b0015 !important;
+  color: white;
+  font-weight: bold;
+}
+
+/* ẨN TAM GIÁC */
+.react-datepicker__triangle {
+  display: none;
+}
+.booking-action {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.booking-note {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.5;
+  max-width: 500px;
+  margin-top:28px;
+}

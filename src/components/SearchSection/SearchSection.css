@@ -1,6 +1,7 @@
 .search-section {
     width: 80%;
     margin: auto;
+    margin-top: 50px;
 }
 
 /* SEARCH BAR */
@@ -8,6 +9,7 @@
     position: relative;
     width: 100%;
     background: #dbd6d1;
+    margin-top: 15px;
     padding: 18px 20px;
     border-radius: 5px;
     box-sizing: border-box;
@@ -45,7 +47,7 @@
     right: 0;
     width: 100%;
     height: 100%;
-    background: #3f56b5;
+    background:#ff0000;;
 
     transform: translateX(100%);
     transition: transform 0.4s ease;
@@ -64,7 +66,7 @@
     top: 0;
     width: 6px;
     height: 100%;
-    background: #3f56b5;
+    background: #ff0000;;
 }
 .search-icon svg,
 .search-icon span {
@@ -73,7 +75,7 @@
 }
 
 .btn-filter {
-    background: #3f56b5;
+    background: #ff0000;;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -83,7 +85,7 @@
 }
 
 .btn-filter:hover {
-    background: #3f56b5;
+    background: #ff0000;;
 }
 
 /* ===== FILTER BOX ===== */
@@ -114,7 +116,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    background: #3f56b5;
+    background: #ff0000;;
     color: white;
     border: none;
     padding: 16px 30px;
@@ -130,12 +132,12 @@
 
 /* BUTTON RESET */
 .btn-reset {
-    border: 2px solid #3f56b5;
+    border: 2px solid #ff0000;;
     background: transparent;
     padding: 16px 30px;
     border-radius: 5px;
     cursor: pointer;
-    color: #3f56b5;
+    color: #ff0000;;
     transition: 0.3s;
 }
 
@@ -149,7 +151,7 @@
 .contact-banner {
     width: 100%;
     margin-top: 30px;
-    background: #3f56b5;
+    background: #ff0000;
     color: white;
     padding: 25px;
     display: flex;

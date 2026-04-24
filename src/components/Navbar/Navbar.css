@@ -1,39 +1,100 @@
+/* ===== NAVBAR ===== */
 .navbar {
-width:100vw;
-background:#3f56b5;
-padding:15px 0;
+  width: 100%;
+  background: linear-gradient(90deg, #d40000, #ff2b2b);
+  padding: 18px 0;
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-
+/* ===== MENU ===== */
 .menu {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* ===== ITEM ===== */
 .menu li {
-    color: white;
-    font-size: 14px;
-    cursor: pointer;
-    padding: 5px 10px;
-    transition: 0.3s;
-    position: relative;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+  position: relative;
+  padding: 8px 0;
+
+  transition: 0.3s;
 }
 
+/* ===== LINE NGĂN ===== */
 .menu li:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    right: -10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 1px;
-    height: 18px;
-    background: white;
-    opacity: 0.5;
+  content: "";
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 18px;
+  background: rgba(255,255,255,0.4);
 }
+
+/* ===== HOVER TEXT ===== */
 .menu li:hover {
-    color: #ffd700;
-    transform: scale(1.1);
-    transition: 0.3s ease;
+  color: #ffd700;
+}
+
+/* ===== GẠCH CHÂN ANIMATION ===== */
+.menu li::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background: #ffd700;
+  transition: 0.3s;
+}
+
+.menu li:hover::before {
+  width: 100%;
+}
+
+/* ===== ACTIVE (nếu muốn highlight trang) ===== */
+.menu li.active {
+  color: #ffd700;
+}
+
+.menu li.active::before {
+  width: 100%;
+}
+.menu a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: #ffd700;
+}
+
+/* ACTIVE */
+.menu a.active {
+  color: #ffd700;
+  font-weight: bold;
+  border-bottom: 2px solid #ffd700;
 }

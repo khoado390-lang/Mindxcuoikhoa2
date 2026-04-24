@@ -1,0 +1,37 @@
+.orders {
+  padding: 40px;
+  background: #f6f6f6;
+  min-height: 100vh;
+}
+
+.orders h2 {
+  margin-bottom: 5px;
+}
+
+.orders p {
+  color: #666;
+}
+
+/* EMPTY */
+.empty-order {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.empty-order img {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.empty-order p {
+  font-size: 18px;
+  color: #888;
+}
+
+/* ORDER ITEM */
+.order-item {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}

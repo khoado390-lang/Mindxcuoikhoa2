@@ -1,0 +1,72 @@
+.account-page {
+  width: 100%;
+  padding: 50px 0;
+  background: #f5f5f5;
+}
+
+.account-container {
+  width: 900px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/* TITLE */
+.account-container h2 {
+  margin-bottom: 5px;
+}
+
+.account-container p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+/* GRID */
+.form-grid {
+  display: flex;
+  gap: 40px;
+}
+
+/* COLUMN */
+.form-left,
+.form-right {
+  flex: 1;
+}
+
+/* LABEL */
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+/* INPUT */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+/* BUTTON */
+.save-btn {
+  margin-top: 25px;
+  padding: 12px 25px;
+  background: #d60000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: #b80000;
+}
+.error {
+  color: red;
+  font-size: 13px;
+  margin-top: 3px;
+  display: block;
+}

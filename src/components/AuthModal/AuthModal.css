@@ -44,13 +44,13 @@
 }
 
 .close-btn:hover {
-  color: #3f56b5;
+  color: #ff0000;;
 }
 
 /* TITLE */
 .auth-modal h2 {
   text-align: center;
-  color: #3f56b5;
+  color: #ff0000;;
   margin-bottom: 20px;
 }
 
@@ -72,7 +72,6 @@
   transition: 0.3s;
 }
 
-/* LABEL (ban đầu nằm trong input) */
 .input-group label {
   position: absolute;
   left: 12px;
@@ -92,12 +91,12 @@
   font-size: 12px;
   background: #fff;
   padding: 0 6px;
-  color: #3f56b5;
+  color: #ff0000;;
 }
 
 /* FOCUS INPUT */
 .input-group input:focus {
-  border-color: #3f56b5;
+  border-color: #ff0000;;
   box-shadow: 0 0 0 3px rgba(63, 86, 181, 0.15);
 }
 
@@ -116,7 +115,7 @@
 .btn-submit {
   width: 100%;
   padding: 13px;
-  background: #3f56b5;
+  background: #ff0000;
   border: none;
   border-radius: 10px;
   color: white;
@@ -136,7 +135,7 @@
 }
 
 .switch span {
-  color: #3f56b5;
+  color:#ff0000;;
   cursor: pointer;
   font-weight: 600;
 }
